@@ -98,13 +98,6 @@ articleView.create = function() {
   });
 
   $('#articles').append(article.toHtml());
-
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-
-  $('#export-field').show();
-  $('#article-json').val(`${JSON.stringify(article)},`);
 };
 
 articleView.submit = function(event) {
@@ -131,8 +124,4 @@ articleView.initIndexPage = function() {
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
 };
